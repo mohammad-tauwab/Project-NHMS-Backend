@@ -21,6 +21,7 @@ app.use(cors());
 app.use(express.static(path.join(rootDir, "public"))); // seeting up the public folder
 
 app.use(express.urlencoded()); //getting the data parsed sent in the request
+app.use(express.json()); // to get the data in json format sent in the request
 app.use((req, res, next) => {
   //reading and consoling the data
   console.log(req.method, req.url);

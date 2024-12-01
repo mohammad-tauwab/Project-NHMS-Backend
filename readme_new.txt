@@ -15,3 +15,6 @@ const cors = require('cors');
 app.use(cors());
 2. We have upadted the server response. As now it is sending res.send(JSON.Stringify(obj)); so that when we do do fetch from the 
 fromt end we will get the JSON response from the server.
+
+---------------------- UPADTE (1.3) ---------------------------
+********* adding app.use(express.json()); to parse the JSON objcet data sent in the request********
