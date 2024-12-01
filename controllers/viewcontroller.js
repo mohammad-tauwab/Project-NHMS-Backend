@@ -5,11 +5,10 @@ const home = (req, res, next) => {
 };
 
 const userAuth = (req, res, next) => {
-  let validUser;
   checkAuthUser((validUser) => {
-    validUser = validUser;
+    console.log(JSON.stringify(validUser));
+    res.send(JSON.stringify(validUser));
   });
-  res.send(validUser);
 };
 
 module.exports = {

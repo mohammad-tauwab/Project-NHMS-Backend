@@ -4,6 +4,7 @@ const PORT_NUMBER = 7000;
 const path = require("path");
 const rootDir = require("./utilities/root_directory_handler");
 const router = require("./routes/routeshandler");
+const cors = require("cors");
 
 app.listen(PORT_NUMBER, () => {
   console.log(
@@ -14,6 +15,8 @@ app.listen(PORT_NUMBER, () => {
 //***************************************** SETTING UP THE VIEW EJS ENGINE */
 app.set("view engine", "ejs");
 app.set("views", "views");
+
+app.use(cors());
 
 app.use(express.static(path.join(rootDir, "public"))); // seeting up the public folder
 
