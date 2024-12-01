@@ -3,6 +3,7 @@ const app = express();
 const PORT_NUMBER = 7000;
 const path = require("path");
 const rootDir = require("./utilities/root_directory_handler");
+const router = require("./routes/routeshandler");
 
 app.listen(PORT_NUMBER, () => {
   console.log(
@@ -22,4 +23,11 @@ app.use((req, res, next) => {
   console.log(req.method, req.url);
   console.log(req.body);
   next();
+});
+
+app.use(router);
+
+//handling the page not found
+app.use((req, res, next) => {
+  res.render("notfound");
 });
