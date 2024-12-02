@@ -5,7 +5,7 @@ const home = (req, res, next) => {
 };
 
 const userAuth = (req, res, next) => {
-  checkAuthUser((validUser) => {
+  checkAuthUser(req.body, (validUser) => {
     console.log(JSON.stringify(validUser));
     res.send(JSON.stringify(validUser));
   });

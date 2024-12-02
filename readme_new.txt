@@ -18,3 +18,8 @@ fromt end we will get the JSON response from the server.
 
 ---------------------- UPADTE (1.3) ---------------------------
 ********* adding app.use(express.json()); to parse the JSON objcet data sent in the request********
+
+
+------------------- UPDATE (1.4) ---------------------------------
+We will upadte the app.jsx to send the details of the current user whose data is sent in a request through the
+JSON objcet by the client and also print the response.
