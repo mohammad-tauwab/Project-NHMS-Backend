@@ -16,6 +16,7 @@ const checkAuthUser = (currentUser, callback) => {
         if (currentUser.name == user.name && currentUser.pwd == user.pwd) {
           userObj.role = user.role;
           userObj.contact = user.contact;
+          userObj.username = user.username;
         }
       });
       callback(userObj);

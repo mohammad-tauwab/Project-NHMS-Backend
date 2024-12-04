@@ -23,3 +23,6 @@ fromt end we will get the JSON response from the server.
 ------------------- UPDATE (1.4) ---------------------------------
 We will upadte the app.jsx to send the details of the current user whose data is sent in a request through the
 JSON objcet by the client and also print the response.
+
+ ------------------- UPDATE (2.1) ------------------------------
+ When the clinet is requesting on adduser we are serving the client with an html page.
