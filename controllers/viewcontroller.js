@@ -1,6 +1,8 @@
 const { checkAuthUser } = require("../models/chekUserAuth");
+const { storeDataInFile } = require("../models/storedata");
 const rootDir = require('../utilities/root_directory_handler');
 const path = require('path');
+
 
 const home = (req, res, next) => {
   res.render("home");
@@ -14,7 +16,11 @@ const userAuth = (req, res, next) => {
 };
 
 const addUser = (req,res,next)=>{
-  res.sendFile(path.join(rootDir,'views','adduser.html'));
+  let filename =(req.body.name+'.txt').toString();
+  storeDataInFile(req.body,filename,'write',(message)=>{
+    res.send(message);
+  })
+ 
 }
 
 module.exports = {

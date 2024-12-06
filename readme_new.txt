@@ -25,4 +25,5 @@ We will upadte the app.jsx to send the details of the current user whose data is
 JSON objcet by the client and also print the response.
 
  ------------------- UPDATE (2.1) ------------------------------
- When the clinet is requesting on adduser we are serving the client with an html page.
+ When the clinet is requesting on adduser we are saving the data to the data base creating a new table with 
+ the added user details.
