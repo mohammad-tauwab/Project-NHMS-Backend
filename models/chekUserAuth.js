@@ -8,12 +8,14 @@ let userList = [];
 //the user credentials are checked here and remaining data are sent back to client.
 const checkAuthUser = (currentUser, callback) => {
   let userObj = {};
-  console.log(currentUser);
   fs.readFile(filepath, (err, data) => {
     !err ? (userList = JSON.parse(data)) : console.log(err);
     if (userList.length != 0) {
       userList.forEach((user) => {
-        if (currentUser.name == user.name && currentUser.pwd == user.pwd) {
+        if (
+          currentUser.loginid == user.loginid &&
+          currentUser.pwd == user.pwd
+        ) {
           userObj.role = user.role;
           userObj.contact = user.contact;
           userObj.username = user.username;
