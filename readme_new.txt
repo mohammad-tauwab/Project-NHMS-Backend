@@ -27,3 +27,8 @@ JSON objcet by the client and also print the response.
  ------------------- UPDATE (2.1) ------------------------------
  When the clinet is requesting on adduser we are saving the data to the data base creating a new table with 
  the added user details.
+
+ -------------------- UPDATE (3.1) -----------------------------------------
+ We have upadted the storedata.js to store the user details when a new user is added. The data is stored in three different files
+ we have added to the userAuthFile so that he can login, userDataBase so that user can be added or deletd and User Nmae 
+ file so that his roles can be modified.
