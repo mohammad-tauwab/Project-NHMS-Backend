@@ -32,3 +32,10 @@ JSON objcet by the client and also print the response.
  We have upadted the storedata.js to store the user details when a new user is added. The data is stored in three different files
  we have added to the userAuthFile so that he can login, userDataBase so that user can be added or deletd and User Nmae 
  file so that his roles can be modified.
+
+-----------------------ADD (4.1)-----------------------------------------------
+Shifted all the data from file to pasql userDataBase
+Created a psql server and connected it to PgAdmin through whcih some tables were Created
+When a new user is added, the two database is updated. the user is added to the user table from where the users are managed
+and the deatils are also added to the authatble which is used to allowing the user to login
+On Login the data is fetched from the authtable and the entered value is matched to identify the valid user

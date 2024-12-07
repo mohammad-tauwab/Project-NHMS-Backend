@@ -1,14 +1,23 @@
 const fs = require("fs");
+const { executeQuery } = require("./modifypsqldB");
 const rootDir = require("../utilities/root_directory_handler");
 const path = require("path");
 
 const filepath = path.join(rootDir, "models", "database", "userAuthFile.txt");
 let userList = [];
 
-//the user credentials are checked here and remaining data are sent back to client.
+//the user credentials are checked here and remaining data are sent back to client.modi
 const checkAuthUser = (currentUser, callback) => {
-  let userObj = {};
-  fs.readFile(filepath, (err, data) => {
+  let dbQuery = "select * from authTable where loginid = $1";
+  let value = [currentUser.loginid];
+  executeQuery(dbQuery, value, (res) => {
+    if (res.length != 0 && res[0].pwd === currentUser.pwd) {
+      callback(res);
+    } else callback(res);
+  });
+
+  // This code is required for reading the data from the file
+  /*fs.readFile(filepath, (err, data) => {
     !err ? (userList = JSON.parse(data)) : console.log(err);
     if (userList.length != 0) {
       userList.forEach((user) => {
@@ -24,6 +33,7 @@ const checkAuthUser = (currentUser, callback) => {
       callback(userObj);
     } else callback(userObj);
   });
+};*/
 };
 
 module.exports = {

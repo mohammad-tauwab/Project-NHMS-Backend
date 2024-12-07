@@ -1,0 +1,35 @@
+create table authtable(
+username varchar(255),
+loginid varchar(255),
+pwd varchar(255),
+contact varchar(255),
+role varchar(255)
+)
+
+select * from authtable
+
+insert into authtable (username,loginid,pwd,contact,role)
+values ('Default User','User93','user786','9931022477','General User'),
+('Mohammad Tauwab', 'mtauwab93','tauwab','9599488139', 'Main Admin')
+
+select * from authTable where loginid='User93'
+
+insert into authtable values 
+('Name','loginId','password','number','general role')
+
+
+create table users(
+username varchar(255),
+loginid varchar(255),
+pwd varchar(255),
+employeeid varchar(255),
+contact varchar(255),
+role varchar(255)
+)
+
+select * from users
+
+delete from authtable where username = 'Name'
+
+
+
