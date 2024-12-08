@@ -9,12 +9,13 @@ const home = (req, res, next) => {
 const userAuth = (req, res, next) => {
   let fetchedData = [];
   checkAuthUser(req.body, (validUserDetail) => {
-    fetchedData.push(validUserDetail[0]);
+    fetchedData.push(validUserDetail[0]); //getting the user details from authtable to authentictae user and adding it to data array
     executeQuery(
+      // now getting the roles assigned to the user so that it can be reflected while login and pushing it to the data array
       "select role from users where loginid = $1",
       [validUserDetail[0].loginid],
       (userRoles) => {
-        fetchedData.push(userRoles[0]);
+        fetchedData.push(userRoles[0]); //now the fetchedData conatin the auth user details and the roles assigned to the users.
         res.send(fetchedData);
       }
     );
