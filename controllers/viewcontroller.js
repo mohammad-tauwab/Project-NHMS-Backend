@@ -15,7 +15,10 @@ const userAuth = (req, res, next) => {
       "select role from users where loginid = $1",
       [validUserDetail[0].loginid],
       (userRoles) => {
-        fetchedData.push(userRoles[0]); //now the fetchedData conatin the auth user details and the roles assigned to the users.
+        userRoles.length != 0
+          ? fetchedData.push(userRoles[0])
+          : fetchedData.push({}); //now the fetchedData conatin the auth user details and the roles assigned to the users.
+        console.log(fetchedData);
         res.send(fetchedData);
       }
     );
