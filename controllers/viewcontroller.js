@@ -18,7 +18,6 @@ const userAuth = (req, res, next) => {
         userRoles.length != 0
           ? fetchedData.push(userRoles[0])
           : fetchedData.push({}); //now the fetchedData conatin the auth user details and the roles assigned to the users.
-        console.log(fetchedData);
         res.send(fetchedData);
       }
     );
