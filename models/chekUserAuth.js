@@ -1,10 +1,4 @@
-const fs = require("fs");
 const { executeQuery } = require("./modifypsqldB");
-const rootDir = require("../utilities/root_directory_handler");
-const path = require("path");
-
-const filepath = path.join(rootDir, "models", "database", "userAuthFile.txt");
-let userList = [];
 
 //the user credentials are checked here and remaining data are sent back to client.modi
 const checkAuthUser = (currentUser, callback) => {

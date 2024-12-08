@@ -1,17 +1,23 @@
-const { rollupVersion } = require("vite");
 const { checkAuthUser } = require("../models/chekUserAuth");
+const { executeQuery } = require("../models/modifypsqldB");
 const { storeUserData } = require("../models/storedata");
-const rootDir = require("../utilities/root_directory_handler");
-const path = require("path");
 
 const home = (req, res, next) => {
   res.render("home");
 };
 
 const userAuth = (req, res, next) => {
+  let fetchedData = [];
   checkAuthUser(req.body, (validUserDetail) => {
-    console.log("read data is", validUserDetail);
-    res.send(validUserDetail);
+    fetchedData.push(validUserDetail[0]);
+    executeQuery(
+      "select role from users where loginid = $1",
+      [validUserDetail[0].loginid],
+      (userRoles) => {
+        fetchedData.push(userRoles[0]);
+        res.send(fetchedData);
+      }
+    );
   });
 };
 
