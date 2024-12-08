@@ -23,9 +23,9 @@ const addUser = (req, res, next) => {
     pwd: req.body.pwd,
     loginid: req.body.loginid,
     roles: "General User",
-    mobile: req.body.contact,
+    mobile: req.body.mobile,
   };
-  storeUserData(req.body, "user", (message) => {
+  storeUserData(req.body, "users", (message) => {
     res.send(JSON.stringify(message));
     storeUserData(userAuthdata, "authtable", (message) => {
       //once the data is written to the database we are calling back the function (view controller) with the response

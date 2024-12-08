@@ -20,7 +20,6 @@ const storeUserData = (data, tablename, callback) => {
   let query = tablename === "users" ? userquery : authquery;
 
   executeQuery(query, values, (res) => {
-    console.log("data written to database");
     callback(res); //when data is written to database we are calling back the function (view controller) with the response
   });
 
