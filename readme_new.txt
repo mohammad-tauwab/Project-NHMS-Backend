@@ -39,3 +39,7 @@ Created a psql server and connected it to PgAdmin through whcih some tables were
 When a new user is added, the two database is updated. the user is added to the user table from where the users are managed
 and the deatils are also added to the authatble which is used to allowing the user to login
 On Login the data is fetched from the authtable and the entered value is matched to identify the valid user
+
+------------------------ADD (5.1) ----------------------------------------------
+1. Setting the exclusive role to be displayed in the add role of the manage user
+store the current user roles in the array--> filter the roles which are not added in a separate array

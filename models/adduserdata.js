@@ -14,7 +14,7 @@ const storeUserData = (data, tablename, callback) => {
         data.pwd,
         data.employeeid,
         data.mobile,
-        data.roles.join("-"),
+        data.roles.join(","),
       ])
     : (values = [data.name, data.loginid, data.pwd, data.mobile, data.roles]);
   let query = tablename === "users" ? userquery : authquery;
