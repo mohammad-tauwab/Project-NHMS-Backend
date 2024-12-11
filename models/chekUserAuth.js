@@ -1,4 +1,4 @@
-const { executeQuery } = require("./modifypsqldB");
+const { executeQuery } = require("./executequerry");
 
 //the user credentials are checked here and remaining data are sent back to client.modi
 const checkAuthUser = (currentUser, callback) => {

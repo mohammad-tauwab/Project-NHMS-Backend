@@ -1,6 +1,6 @@
 const path = require("path");
 const rootDir = require("../utilities/root_directory_handler");
-const { executeQuery } = require("./modifypsqldB");
+const { executeQuery } = require("./executequerry");
 
 //data: data to be stored, file: file name, mode: wite or append
 const storeUserData = (data, tablename, callback) => {

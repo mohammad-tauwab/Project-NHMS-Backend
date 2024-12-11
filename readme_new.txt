@@ -43,3 +43,4 @@ On Login the data is fetched from the authtable and the entered value is matched
 ------------------------ADD (5.1) ----------------------------------------------
 1. Setting the exclusive role to be displayed in the add role of the manage user
 store the current user roles in the array--> filter the roles which are not added in a separate array
+2. use an array to store the the upadted roels depending upon the user addition or deletion

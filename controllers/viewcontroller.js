@@ -1,5 +1,5 @@
 const { checkAuthUser } = require("../models/chekUserAuth");
-const { executeQuery } = require("../models/modifypsqldB");
+const { executeQuery } = require("../models/executequerry");
 const { storeUserData } = require("../models/adduserdata");
 
 const home = (req, res, next) => {
@@ -53,9 +53,23 @@ const fetchUser = (req, res, next) => {
   })
 
 }
+
+const deleteAndUpdateUser = (req,res,next)=>{
+  let dBquery = 'delete from users where loginid = $1';
+  let value = [req.body.id]
+  executeQuery(dBquery,value,()=>{
+    executeQuery('select * from users',[],(data)=>{
+      console.log('The data of the users are',data);
+      res.send(data);
+    })
+  })
+ 
+
+}
 module.exports = {
   home,
   userAuth,
   addUser,
   fetchUser,
+  deleteAndUpdateUser
 };
