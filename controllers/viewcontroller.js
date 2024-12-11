@@ -63,7 +63,14 @@ const deleteAndUpdateUser = (req,res,next)=>{
       res.send(data);
     })
   })
- 
+}
+
+const updateUserRoles = (req, res, next) =>{
+  let dBquery = 'update users set role = $1 where username = $2';
+  let value = [req.body.role, req.body.id];
+  executeQuery(dBquery,value,(data)=>{
+    res.send(data);
+  })
 
 }
 module.exports = {
@@ -71,5 +78,6 @@ module.exports = {
   userAuth,
   addUser,
   fetchUser,
-  deleteAndUpdateUser
+  deleteAndUpdateUser,
+  updateUserRoles
 };
